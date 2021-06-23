@@ -1,0 +1,127 @@
+.wrapper {
+    height: 100vh;
+  }
+.myData {
+  position: fixed;
+  height:500px;
+  width: 500px;
+  background-color: aqua;
+
+}
+  p,
+  .legendTitle,
+  .label,
+  .smallLegend {
+    font-family: sans-serif;
+  }
+  
+  .smallLegend {
+    display: none;
+  }
+  
+  .metricMenu {
+    display: inline;
+    position: absolute;
+    top: 0px;
+    left: 17px;
+  }
+  
+  .country {
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -ms-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+  }
+  
+  .country:hover {
+    fill: #d90429 !important;
+  }
+  
+  .visualisation {
+     z-index: 0;
+  }
+  
+  .hidden {
+    visibility: hidden;
+  }
+  
+  @keyframes fadeinout {
+    0% { opacity: 0; visibility: hidden;}
+    50% { opacity: 1; visibility: visible;}
+    100% { opacity: 0; visibility: hidden;}
+  }
+  
+  .hiddenF {
+    animation: fadeinout 5s cubic-bezier(0.1,1,0.1,1) 1 forward;
+  }
+  
+  div.tooltip {
+    background-color: #fff;
+    padding: 5px 5px;
+    text-shadow: #f5f5f5 0 1px 0;
+    font: 14pt sans-serif;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 8px;
+    opacity: 0.95;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -ms-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+  }
+  
+  div.tooltip h6 {
+    margin: 0;
+    color: #212121;
+  }
+  
+  .legendTitle {
+    font-size: 12pt;
+    opacity: 0.8;
+    text-transform: capitalize;
+  }
+  
+  .label {
+    font-size: 10pt;
+    opacity: 0.8;
+  }
+  
+  .legendBackground {
+    fill: #ffffff !important;
+  }
+  
+  @media (max-width: 400px) {
+     p,
+    .legendTitle,
+    .label {
+      font-size: 10pt;
+    }
+    
+    .metricMenu {
+      max-width: 50px;
+      line-height: 11pt;
+      top: 60vh;
+    }
+    .smallLegend {
+      display: block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: 20pt;
+      font-weight: bold;
+      padding-bottom: 30px;
+      padding-left: 30px;
+      padding-top: 5px;
+      padding-right: 10px;
+      z-index: 1;
+    }
+    
+    .smallLegend:hover {
+      cursor: pointer;
+    }  
+    
+  }

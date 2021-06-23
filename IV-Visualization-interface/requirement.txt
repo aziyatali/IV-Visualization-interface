@@ -1,0 +1,17 @@
+Here are the requirements how to run my application.
+
+1. First, please download Node.js based on your Operating System from here.
+https://nodejs.org/en/download/
+
+2. After downloading Node.js then download http-server with npm.(since Chrome doesn't allow to get data from local files)
+
+             npm install --global http-server
+
+or it can be found here
+https://www.npmjs.com/package/http-server
+
+3. Please go into the src folder where data.js file exists, then on terminal write this code:
+
+             http-server
+
+Then it should open the localhost(if not please check the localhost based on it's port(e.g.3000)

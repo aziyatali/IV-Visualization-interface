@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <title>COVID-19 Statistics</title>
+    <style>
+     p, .legendTitle, .label {
+      font-family: sans-serif;
+    }
+    /* .country {
+        transition
+        transition-delay
+        transition-duration
+        transition-property
+        transition-timing-function
+    } */
+    .country {
+      -webkit-transition: all 0.5s ease-out 0s;
+      -moz-transition: all 0.5s ease-out 0s;
+      -ms-transition: all 0.5s ease-out 0s;
+      -o-transition: all 0.5s ease-out 0s;
+      transition: all 0.5s ease-out 0s;
+    }
+
+    .country:hover {
+        fill: #D90429!important;
+    }
+
+    .hidden {
+        display: none;
+        /* .visible {
+      height: 3em;
+      width: 10em;
+      background: yellow; */
+        /* } */
+    }
+
+    /*
+    UP
+    .tooltip{
+display: inline;
+position: relative; /** very important set to relative
+
+.tooltip:hover:after{
+background: #333;
+background: rgba(0,0,0,.8);
+border-radius: 5px;
+bottom: 26px;
+color: #fff;
+content: attr(title); /**extract the content from the title 
+left: 20%;
+padding: 5px 15px;
+position: absolute;
+z-index: 98;
+width: 220px;
+}
+
+.tooltip:hover:before{
+border: solid;
+border-color: #333 transparent;
+border-width: 6px 6px 0 6px;
+bottom: 20px;
+content: "";
+left: 50%;
+position: absolute;
+z-index: 99;
+}
+    DOWN
+    */
+    
+    div.tooltip {
+        background-color: #fff;
+        padding: 5px 5px;
+        text-shadow: #f5f5f5 0 1px 0;
+        font: 14pt sans-serif;
+        border: 1px solid;
+        border-color: grey;
+        border-radius: 8px;
+        opacity: 0.95;
+        position: absolute;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
+        -webkit-transition: all 0.5s ease-out 0s;
+        -moz-transition: all 0.5s ease-out 0s;
+        -ms-transition: all 0.5s ease-out 0s;
+        -o-transition: all 0.5s ease-out 0s;
+        transition: all 0.5s ease-out 0s;
+    }
+
+    div.tooltip h6 {
+        margin: 0;
+        color: #212121;
+    }
+
+    .legendTitle {
+        font-size: 12pt;
+        opacity: 0.8;
+        text-transform: capitalize;
+    }
+
+    .label {
+        font-size: 10pt;
+        opacity: 0.8;
+    }
+      
+    .legendBackground {
+        fill: #ffffff!important;
+    }
+</style>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+<link rel="stylesheet" href="./style.css">
+
+  </head>
+  <body>
+    <p>
+<!-- • Design an interface with a clear layout -> DONE
+• Implement more than one type of visualization -> MAP for now
+• Include interactive techniques like brushing, painting, scaling, and linking -> Shows country with red and color
+• Include any type of filtering option -> DONE--> 
+<!-- • Feel free to use multiple datasets -->
+      Show:
+      <select id="metrics">
+        <!-- • Include any type of filtering option --> -->
+        <option value="casesPerOneMillion" selected="selected">Cases</option>
+        <option value="deathsPerOneMillion">Deaths</option>
+        <option value="testsPerOneMillion">Tests</option>
+        <option value="activePerOneMillion">Active</option>
+        <option value="recoveredPerOneMillion">Recovered</option>
+        <option value="criticalPerOneMillion">Critical</option>
+      </select>
+    </p>
+    
+    <div class="visualisation"> </div>
+    <!-- <div class = "myData"></div> -->
+    <script src = "./data.js"></script>
+    <!-- <script src="./line.js"></script> -->
+  </body>
+</html>
